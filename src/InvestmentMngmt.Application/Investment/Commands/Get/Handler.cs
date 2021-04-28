@@ -32,7 +32,7 @@ namespace InvestmentMngmt.Application.Investment.Commands.Get
 
             if (resultResponseBytes is null)
             {
-                _tracer.ActiveSpan.SetTag("cache", false);
+                _tracer.ActiveSpan.SetTag("reponseCache", false);
                 var resultResponse = await _investmentSummaryService.GetSummaryAsync();
                 await _distributedCache.SetAsync(distributedCacheKey, JsonSerializer.SerializeToUtf8Bytes(resultResponse), DateTime.Now.UntilMidnight(), cancellationToken);
 
@@ -40,8 +40,8 @@ namespace InvestmentMngmt.Application.Investment.Commands.Get
             }
             else
             {
-                _tracer.ActiveSpan.SetTag("cache", true);
-                var resultResponse = JsonSerializer.Deserialize<Result>(new ReadOnlySpan<byte>(resultResponseBytes));                    
+                _tracer.ActiveSpan.SetTag("responseCache", true);
+                var resultResponse = JsonSerializer.Deserialize<Result>(new ReadOnlySpan<byte>(resultResponseBytes));
                 return new Response<Result>(resultResponse);
             }
         }

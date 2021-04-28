@@ -1,9 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace InvestmentMngmt.API.Bootstrap
 {
@@ -19,7 +15,7 @@ namespace InvestmentMngmt.API.Bootstrap
         /// <param name="configuration"></param>
         /// <returns></returns>
         public static IServiceCollection ConfigureDistributedCache(this IServiceCollection services, IConfiguration configuration)
-        {
+        {            
             var redisConnecttion = configuration.GetConnectionString("RedisConnectionString");
             if (!string.IsNullOrEmpty(redisConnecttion))
             {

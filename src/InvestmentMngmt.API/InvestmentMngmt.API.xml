@@ -29,6 +29,26 @@
             <param name="services"></param>
             <returns></returns>
         </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.HangfireConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.HangfireConfiguration.ConfigureHangfireServer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.HangfireConfiguration.ConfigureHangfireDashboard(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="applicationBuilder"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
         <member name="T:InvestmentMngmt.API.Bootstrap.InvestmentPortfolioConfiguration">
             <summary>
             
@@ -101,6 +121,18 @@
             <summary>
             
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Filters.AllowAllConnectionsFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Filters.AllowAllConnectionsFilter.Authorize(Hangfire.Dashboard.DashboardContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
             <returns></returns>
         </member>
         <member name="T:InvestmentMngmt.API.Filters.TracingActionFilter">

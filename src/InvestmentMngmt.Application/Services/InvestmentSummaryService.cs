@@ -27,7 +27,7 @@ namespace InvestmentMngmt.Application.Services
 
             var result = (treasuryDirects.TreasuryDirects.Cast<InvestmentBase>()
                 .Concat(fixedIncomes.FixedIncomes.Cast<InvestmentBase>())
-                .Concat(funds.Fundos.Cast<InvestmentBase>())).Select(x => (InvestmentMngmt.Domain.Investment)x);
+                .Concat(funds.Funds.Cast<InvestmentBase>())).Select(x => (InvestmentMngmt.Domain.Investment)x);
 
             return new Result(result);
         }

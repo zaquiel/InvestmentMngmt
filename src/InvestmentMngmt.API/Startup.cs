@@ -40,6 +40,7 @@ namespace InvestmentMngmt.API
             services.ConfigureInvestmentPortfolio(_configuration);
             services.ConfigureDistributedCache(_configuration);
             services.ConfigureTrancing();
+            services.ConfigureHangfireServer();
         }
 
         /// <summary>
@@ -52,19 +53,17 @@ namespace InvestmentMngmt.API
             IWebHostEnvironment env, 
             IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
+            app.UseHttpsRedirection();
+            app.UseRouting();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.ConfigureSwagger(apiVersionDescriptionProvider);
             }
 
-            app.UseHttpsRedirection();
-            app.UseRouting();            
+            app.ConfigureSwagger(apiVersionDescriptionProvider);
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.ConfigureHangfireDashboard(_configuration);
         }
     }
 }

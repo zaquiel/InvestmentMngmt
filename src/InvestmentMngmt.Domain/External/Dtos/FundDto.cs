@@ -6,6 +6,6 @@ namespace InvestmentMngmt.Domain.External.Dtos
     public readonly struct FundDto
     {
         [JsonPropertyName("fundos")]
-        public IEnumerable<Fund> Fundos { get; init; }
+        public IEnumerable<Fund> Funds { get; init; }
     }
 }
