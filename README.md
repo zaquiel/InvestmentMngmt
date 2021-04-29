@@ -11,7 +11,7 @@
 - Docker
 - Docker Compose
 
-### Instrução
+### Instrução para execução
 - ```docker-compose up -d```
 
 Cria todo ambiente com a API, Redis e Jaeger.
@@ -33,7 +33,7 @@ Utilizei o Jaeger para atender esse ponto, ele realiza todo o trancing da aplica
 Para a busca é possível utilizar filtros como:
 
 - reponseCache=true. Requisições que retornaram do cache.
-- reponseCache=false. Requisições que não retornaram do cache
+- reponseCache=false. Requisições que não retornaram do cache.
 - statusCode. É possível buscar pelos statuscode de erro.
 
 O endereço para acesso à interface do Jaeger é:
