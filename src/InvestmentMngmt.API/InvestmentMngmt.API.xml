@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestmentMngmt.API</name>
+    </assembly>
+    <members>
+        <member name="T:InvestmentMngmt.API.Bootstrap.DistributedCacheConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.DistributedCacheConfiguration.ConfigureDistributedCache(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.GeneralConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.GeneralConfiguration.ConfigureGeneralOptions(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.HangfireConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.HangfireConfiguration.ConfigureHangfireServer(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.HangfireConfiguration.ConfigureHangfireDashboard(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="applicationBuilder"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.InvestmentPortfolioConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.InvestmentPortfolioConfiguration.ConfigureInvestmentPortfolio(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.MediatRConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.MediatRConfiguration.ConfigureMediatR(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.OpenTrancingConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.OpenTrancingConfiguration.ConfigureTrancing(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Bootstrap.SwaggerConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.SwaggerConfiguration.ConfigureSwaggerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentMngmt.API.Bootstrap.SwaggerConfiguration.ConfigureSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Controllers.InvestmentSummaryController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Controllers.InvestmentSummaryController.#ctor(MediatR.ISender,InvestmentMngmt.API.Presentation.IPresenter)">
+            <summary>
+            
+            </summary>
+            <param name="mediator"></param>
+            <param name="presenter"></param>
+        </member>
+        <member name="M:InvestmentMngmt.API.Controllers.InvestmentSummaryController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Filters.AllowAllConnectionsFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Filters.AllowAllConnectionsFilter.Authorize(Hangfire.Dashboard.DashboardContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Filters.TracingActionFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Filters.TracingActionFilter.#ctor(OpenTracing.ITracer,Microsoft.Extensions.Logging.ILogger{InvestmentMngmt.API.Filters.TracingActionFilter})">
+            <summary>
+            
+            </summary>
+            <param name="tracer"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:InvestmentMngmt.API.Filters.TracingActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:InvestmentMngmt.API.Filters.TracingActionFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:InvestmentMngmt.API.Presentation.HttpResponseError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InvestmentMngmt.API.Presentation.HttpResponseError.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InvestmentMngmt.API.Presentation.HttpResponseError.Errors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Presentation.HttpResponseError.#ctor(System.String,System.Collections.Generic.IReadOnlyCollection{Flunt.Notifications.Notification})">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="errors"></param>
+        </member>
+        <member name="T:InvestmentMngmt.API.Presentation.IPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Presentation.IPresenter.GetActionResult``1(InvestmentMngmt.Application.Response{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Presentation.Presenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Presentation.Presenter.GetActionResult``1(InvestmentMngmt.Application.Response{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:InvestmentMngmt.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentMngmt.API.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:InvestmentMngmt.API.Startup._configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentMngmt.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:InvestmentMngmt.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>        
+        </member>
+        <member name="M:InvestmentMngmt.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="apiVersionDescriptionProvider"></param>
+        </member>
+    </members>
+</doc>
